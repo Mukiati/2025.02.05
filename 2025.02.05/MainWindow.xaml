@@ -57,12 +57,12 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <Label Name="label1" Content="alma"/>
-        <Label  Name="label2" Grid.Row="1" Content="{Binding Text2,Mode=TwoWay}"/>
+        <Label Name="label1" Content="{Binding Text1,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+        <Label  Name="label2" Grid.Row="1" Content="{Binding Text2,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
         <Button Name="button1"  Grid.Column="2"  Content="button"/>
         <Button Name="button2"  Grid.Row="1" Grid.Column="2"   Content="button"/>
-        <TextBox Name="textbox1"  Grid.Column="1"/>
-        <TextBox Name="textbox2"  Grid.Column="1" Grid.Row="1" Text="{Binding Text2,Mode=TwoWay}"/>
+        <TextBox Name="textbox1"  Grid.Column="1" Text="{Binding Text1,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBox Name="textbox2"  Grid.Column="1" Grid.Row="1" Text="{Binding Text2,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
         <WrapPanel Name="wrappanel" Grid.Row="2" Grid.ColumnSpan="3"></WrapPanel>
 
 

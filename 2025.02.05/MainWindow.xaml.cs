@@ -25,15 +25,12 @@ namespace _2025._02._05
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = this;
         }
 
         private string text2;
 
-        public event PropertyChangedEventHandler PropertyChanged;
-        private void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
+        
         public string Text2
         {
             get { return text2; }
@@ -42,6 +39,22 @@ namespace _2025._02._05
                 text2 = value;
                 OnPropertyChanged();
             }
+        }
+        private string text1;
+        public string Text1
+        {
+            get { return text1; }
+            set
+            {
+                text1 = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        private void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
